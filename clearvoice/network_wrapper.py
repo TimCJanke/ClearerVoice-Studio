@@ -503,35 +503,35 @@ class network_wrapper(nn.Module):
 
         # Initialize the corresponding network based on the selected model
         if self.args.network == "FRCRN_SE_16K":
-            from networks import CLS_FRCRN_SE_16K
+            from clearvoice.networks import CLS_FRCRN_SE_16K
 
             self.network = CLS_FRCRN_SE_16K(self.args)  # Load FRCRN model
         elif self.args.network == "MossFormer2_SE_48K":
-            from networks import CLS_MossFormer2_SE_48K
+            from clearvoice.networks import CLS_MossFormer2_SE_48K
 
             self.network = CLS_MossFormer2_SE_48K(
                 self.args
             )  # Load MossFormer2_SE model
         elif self.args.network == "MossFormer2_SR_48K":
-            from networks import CLS_MossFormer2_SR_48K
+            from clearvoice.networks import CLS_MossFormer2_SR_48K
 
             self.network = CLS_MossFormer2_SR_48K(
                 self.args
             )  # Load MossFormer2_SR model
         elif self.args.network == "MossFormerGAN_SE_16K":
-            from networks import CLS_MossFormerGAN_SE_16K
+            from clearvoice.networks import CLS_MossFormerGAN_SE_16K
 
             self.network = CLS_MossFormerGAN_SE_16K(
                 self.args
             )  # Load MossFormerGAN model
         elif self.args.network == "MossFormer2_SS_16K":
-            from networks import CLS_MossFormer2_SS_16K
+            from clearvoice.networks import CLS_MossFormer2_SS_16K
 
             self.network = CLS_MossFormer2_SS_16K(
                 self.args
             )  # Load MossFormer2 for separation
         elif self.args.network == "AV_MossFormer2_TSE_16K":
-            from networks import CLS_AV_MossFormer2_TSE_16K
+            from clearvoice.networks import CLS_AV_MossFormer2_TSE_16K
 
             self.network = CLS_AV_MossFormer2_TSE_16K(
                 self.args
