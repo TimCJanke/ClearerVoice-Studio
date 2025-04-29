@@ -284,12 +284,13 @@ class SpeechModel:
         print(f"Running {self.name} ...")  # Display the model being used
 
         if self.args.task == "target_speaker_extraction":
-            from utils.video_process import process_tse
+            print("Target speaker extraction not implemented yet")
+            # from clearvoice.utils.video_process import process_tse
 
-            assert online_write == True
-            process_tse(
-                self.args, self.model, self.device, data_reader, output_wave_dir
-            )
+            # assert online_write == True
+            # process_tse(
+            #     self.args, self.model, self.device, data_reader, output_wave_dir
+            # )
         else:
             # Disable gradient calculation for better efficiency during inference
             with torch.no_grad():
@@ -512,7 +513,7 @@ class CLS_FRCRN_SE_16K(SpeechModel):
         super(CLS_FRCRN_SE_16K, self).__init__(args)
 
         # Import the FRCRN speech enhancement model for 16 kHz
-        from models.frcrn_se.frcrn import FRCRN_SE_16K
+        from clearvoice.models.frcrn_se.frcrn import FRCRN_SE_16K
 
         # Initialize the model
         self.model = FRCRN_SE_16K(args).model
@@ -543,7 +544,9 @@ class CLS_MossFormer2_SE_48K(SpeechModel):
         super(CLS_MossFormer2_SE_48K, self).__init__(args)
 
         # Import the MossFormer2 speech enhancement model for 48 kHz
-        from models.mossformer2_se.mossformer2_se_wrapper import MossFormer2_SE_48K
+        from clearvoice.models.mossformer2_se.mossformer2_se_wrapper import (
+            MossFormer2_SE_48K,
+        )
 
         # Initialize the model
         self.model = MossFormer2_SE_48K(args).model
@@ -574,7 +577,9 @@ class CLS_MossFormer2_SR_48K(SpeechModel):
         super(CLS_MossFormer2_SR_48K, self).__init__(args)
 
         # Import the MossFormer2 speech enhancement model for 48 kHz
-        from models.mossformer2_sr.mossformer2_sr_wrapper import MossFormer2_SR_48K
+        from clearvoice.models.mossformer2_sr.mossformer2_sr_wrapper import (
+            MossFormer2_SR_48K,
+        )
 
         # Initialize the model
         self.model = nn.ModuleList()
@@ -610,7 +615,7 @@ class CLS_MossFormerGAN_SE_16K(SpeechModel):
         super(CLS_MossFormerGAN_SE_16K, self).__init__(args)
 
         # Import the MossFormerGAN speech enhancement model for 16 kHz
-        from models.mossformer_gan_se.generator import MossFormerGAN_SE_16K
+        from clearvoice.models.mossformer_gan_se.generator import MossFormerGAN_SE_16K
 
         # Initialize the model
         self.model = MossFormerGAN_SE_16K(args).model
@@ -641,7 +646,7 @@ class CLS_MossFormer2_SS_16K(SpeechModel):
         super(CLS_MossFormer2_SS_16K, self).__init__(args)
 
         # Import the MossFormer2 speech separation model for 16 kHz
-        from models.mossformer2_ss.mossformer2 import MossFormer2_SS_16K
+        from clearvoice.models.mossformer2_ss.mossformer2 import MossFormer2_SS_16K
 
         # Initialize the model
         self.model = MossFormer2_SS_16K(args).model
@@ -673,7 +678,9 @@ class CLS_AV_MossFormer2_TSE_16K(SpeechModel):
         super(CLS_AV_MossFormer2_TSE_16K, self).__init__(args)
 
         # Import the AV-MossFormer2 model for 16 kHz target speech enhancement
-        from models.av_mossformer2_tse.av_mossformer2 import AV_MossFormer2_TSE_16K
+        from clearvoice.models.av_mossformer2_tse.av_mossformer2 import (
+            AV_MossFormer2_TSE_16K,
+        )
 
         # Initialize the model
         self.model = AV_MossFormer2_TSE_16K(args).model
