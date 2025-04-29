@@ -20,6 +20,7 @@ import random
 EPS = 1e-6
 MAX_WAV_VALUE_16B = 32768.0
 MAX_WAV_VALUE_32B = 2147483648.0
+MAX_WAV_VALUE = MAX_WAV_VALUE_16B  # Default to 16-bit value
 
 
 def audioread_archieved(path, sampling_rate):
