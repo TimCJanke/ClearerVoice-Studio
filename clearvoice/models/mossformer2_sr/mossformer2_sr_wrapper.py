@@ -1,5 +1,6 @@
-from models.mossformer2_sr.generator import Mossformer, Generator
+from clearvoice.models.mossformer2_sr.generator import Mossformer, Generator
 import torch.nn as nn
+
 
 class MossFormer2_SR_48K(nn.Module):
     """
@@ -12,8 +13,8 @@ class MossFormer2_SR_48K(nn.Module):
     Arguments
     ---------
     args : Namespace
-        Configuration arguments that may include hyperparameters 
-        and model settings (not utilized in this implementation but 
+        Configuration arguments that may include hyperparameters
+        and model settings (not utilized in this implementation but
         can be extended for flexibility).
 
     Example
@@ -48,5 +49,5 @@ class MossFormer2_SR_48K(nn.Module):
 
         """
         x = self.model_m(x)  # Get outputs and mask from TestNet
-        outpus = self.model_g(x)
+        outputs = self.model_g(x)
         return outputs  # Return the outputs
