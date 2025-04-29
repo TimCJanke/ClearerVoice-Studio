@@ -8,7 +8,7 @@ import torch.nn.functional as F
 from torch import nn, einsum
 from einops import rearrange
 from rotary_embedding_torch import RotaryEmbedding
-from cleaervoice.models.mossformer2_se.conv_module import (
+from clearvoice.models.mossformer2_se.conv_module import (
     ConvModule,
     GLU,
     FFConvM_Dilated,

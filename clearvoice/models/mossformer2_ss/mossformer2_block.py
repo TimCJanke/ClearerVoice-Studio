@@ -11,13 +11,13 @@ from torchinfo import summary
 from einops import rearrange
 from rotary_embedding_torch import RotaryEmbedding
 
-from cleaervoice.models.mossformer2_ss.conv_module import (
+from clearvoice.models.mossformer2_ss.conv_module import (
     ConvModule,
     GLU,
     FFConvM_Dilated,
 )
-from cleaervoice.models.mossformer2_ss.fsmn import UniDeepFsmn, UniDeepFsmn_dilated
-from cleaervoice.models.mossformer2_ss.layer_norm import (
+from clearvoice.models.mossformer2_ss.fsmn import UniDeepFsmn, UniDeepFsmn_dilated
+from clearvoice.models.mossformer2_ss.layer_norm import (
     CLayerNorm,
     GLayerNorm,
     GlobLayerNorm,
